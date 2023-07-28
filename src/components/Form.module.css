@@ -1,6 +1,6 @@
 .form {
   display: flex;
-  flex-direction:  column;
+  flex-direction: column;
   gap: 1rem;
 }
 
@@ -10,4 +10,58 @@ input {
 
 select {
   padding: 0.5rem;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  padding-bottom: 0.5rem;
+}
+
+.error {
+  color: red;
+}
+
+.checkboxWrapper:has(input[type="checkbox"]) {
+  position: relative;
+  display: inline-block;
+  height: 34px;
+  width: 60px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.slider {
+  background: #ccc;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  bottom: 4px;
+  height: 26px;
+  left: 4px;
+  transition: 0.4s;
+  width: 26px;
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:checked + .slider {
+  background: #66bb6a;
+}
+
+input[type="checkbox"]:checked + .slider::before {
+  transform: translateX(26px);
 }
